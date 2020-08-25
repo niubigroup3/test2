@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+	<meta  content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<meta  name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+   <title>主页</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> 
+	 <link href="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+   <script src="js/bootstrap.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+   <script src="js/metisMenu.min.js"></script>
+<!-- DataTables JavaScript -->
+   <script src="js/dataTables.bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+   <script src="js/sb-admin-2.js"></script>
+   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<style type="text/css">
+
+.menu1{
+        width: 16%;
+        height: 90%;
+        background-color: white;
+        float: left;
+        position: relative;
+        bottom: 0%;
+        border-style:solid ;
+	border-width:2px;
+	border-color:#E9E9E9;
+}
+
+.home1{
+	width:84%;
+	height: 80%;
+	background-color: white;
+	float: left;
+	position: relative;
+	border-style:solid ;
+	border-width:2px;
+	border-color:#E9E9E9;
+}
+
+.module2{
+	background-color: #FFFFFF;
+	width: 100%;
+	height: 10%;
+	font-size: 1vw;
+	color: black;
+	overflow: hidden;
+	position: relative;
+	border-style:solid ;
+	border-width:2px;
+	border-color:#E9E9E9;
+}
+
+
+.menuInfo{
+	height:10%;
+	width: 100%;
+	margin-top: 5%;
+	background-color: #E9E9E9;
+    position: relative;
+}
+
+
+.infoStyle{
+ width: 80%;
+ margin-top: 5%;
+ position: relative;
+ text-align:center;
+ font-size: 1vw;
+}
+
+.salesDataStyle{
+	width: 60%;
+	position: left;
+	height: 20%;
+	margin-left:10%;
+	border-radius: 15px;
+	border-style: solid;
+	border-color: #E9E9E9;
+	text-align: center;
+}
+
+.salesTableStyle{
+	width: 60%;
+	position: left;
+	height: 60%;
+	margin-top: 3%;
+	margin-left:10%;
+	border-style: solid;
+	border-color: #E9E9E9;
+}
+
+ul{
+	list-style-type: none;
+	top:40%; 
+	position: relative;
+}
+
+a{
+	
+	font-size: 1.1vw;
+	color: black;
+	margin-left: 10%;
+	text-decoration: none!important;
+}
+
+
+
+</style>
+
+<body style="width: 100%; height: 100%; min-width:999px;font-family: Arial;">
+	 <!--用户名称栏 固定-->
+		<div class="module2">
+			<span style="left: 1%;position:absolute;">
+				<h2>债券销售管理系统</h2>
+			</span>
+            <span style=" height:70%; top:30%; width:22%; left:78%; float:left; position: absolute;"> 
+        		   用户,${super_ad.UserName}。
+        		    <button class="btn" style="margin-left: 0%;" onclick="logout()"> 退出 </button>
+			</span>
+	    </div>
+  <!--左侧菜单栏-->
+	<div id="menu1" class="menu1">
+		
+		<div id="ao" class="menuInfo">
+			<ul>
+				<li><a href="#home" onclick="changediv1()">销售数据录入数据</a></li>
+			</ul>
+		</div>
+
+        <div id="search" class="menuInfo">
+			<ul>
+				<li><a href="#SalesData" onclick="changediv2()">报表查询</a>
+			<li>
+		</ul>
+		</div>
+	</div>
+ 
+   <!--home模块 显示主要信息-->
+	<div id="home" class="home1" style="display: block;">
+		
+		<h4 style="margin-left: 2%;">录入销售</h4>
+		 <div  class="infoStyle"> <br>
+		     <span style="position: relative;float: left;left:20%;">
+		         <b>   销售姓名 :   </b>
+		     </span>
+		     <span style="left: 30%;position: relative;float: left;">
+		            <select  id="nameforDate" name="name">
+			            <option value="lwj">刘文佳</option>
+			            <option value="cyx">曹彦心</option>
+		            </select>
+		 </span>
+		</div>
+
+ 	<div  class="infoStyle"> <br>
+		    <span style="position: relative;float: left;left:20%;">
+		         <b>   债券类型 :   </b>
+		     </span>
+		     <span style="left: 30%;position: relative;float: left;">
+		            <select  id="bondforDate" name="bond">
+			            <option value="zfzq">政府债券</option>
+			            <option value="jrzq">金融债券</option>
+		            </select>
+		    </span>
+		</div>
+
+		<div  class="infoStyle"> <br>
+		    <span style="position: relative;float: left;left:20%;">
+		         <b>   日期 :   </b>
+		     </span>
+		     <span style="left: 30%;position: relative;float: left;">
+		           <input id="date" type="date" value="2020-08-25	"/>
+		    </span>
+		</div>	
+
+		<div  class="infoStyle"> <br>
+		    <span style="position: relative;float: left;left:20%;">
+		         <b>   金额 :   </b>
+		     </span>
+		     <span style="left: 30%;position: relative;float: left;">
+		           <input id="money" type="text" value="1000"/>
+		    </span>
+		</div>	
+
+		<div  class="infoStyle"> <br>
+ 			<button type="submit" class="btn"> 提交</button>
+ 		</div>
+    </div>
+
+
+
+     <div style="position: absolute; bottom:0%;left: 40%;  width: 20%;
+	                 text-align: center; ">
+	    <h5 style="color: rgba(0,0,0,0.45);"> copyright©Team3</h5>
+	    </div>
+
+
+    <div id="SalesData" class="home1" style="display: none;">
+    	 
+    	 <h4 style="margin-left: 2%;">销售数据</h4>
+
+    	  <div class="salesDataStyle">
+    	  	<br>
+    	  	<span style="width: 50%;float: left;height: 40%;">
+				<b>销售姓名</b> &nbsp &nbsp &nbsp
+				<select  id="nameforSale" name="name">
+			            <option value="lwj">刘文佳</option>
+			            <option value="cyx">曹彦心</option>
+		    	 </select>
+			 </span>
+			<span style="width: 50%;float: left;height: 40%;">	
+		     	<b>债券类型</b> &nbsp &nbsp &nbsp
+				 <select  id="bondforSale" name="bond">
+			            <option value="zfzq">政府债券</option>
+			            <option value="jrzq">金融债券</option>
+		            </select>
+		    </span>
+
+			<span style="width: 50%;float: left;">
+				<b>开始日期</b> &nbsp &nbsp &nbsp
+				<input type="date"/>
+			 </span>
+
+			 <span style="width: 50%;float: left;">
+				<b>结束日期</b> &nbsp &nbsp &nbsp
+				<input type="date"/>
+			 </span>
+    	  </div>
+
+    	  <div class="salesTableStyle">
+    	  	<table class="table table-striped table-bordered table-hover table-responsive" style="background-color: white;"> 
+                      <thread>
+                        <tr>
+                          <th>姓名</th>
+                          <th>日期</th>
+                          <th>债券类型</th>
+                          <th>金额</th>
+                        </tr>
+                      </thread>
+                      <tbody> 
+                        <c:forEach items="${users_List}" var="user">
+                          <tr>
+                            <td>${user.Username}</td>
+                            <td>${user.date}</td>
+                            <td>${user.bond}</td>
+                            <td>${user.money}</td>
+                          </tr>
+                        </c:forEach>
+                      </tbody>
+                    </table>
+    	  </div>
+
+    </div>
+
+    
+</body>
+
+
+
+<script type="text/javascript">
+
+    var home = document.getElementById('home');
+    var salesData = document.getElementById('SalesData');
+
+
+function changediv1(){
+
+    if(salesData.style.display=="block"){
+	salesData.style.display="none";
+	home.style.display="block";
+}
+}
+
+function changediv2(){
+    
+    if(home.style.display=="block"){
+	home.style.display="none";
+	salesData.style.display="block";
+}
+}
+
+function logout(){
+	window.location.href=("login.html");
+}
+</script>
+</html>
