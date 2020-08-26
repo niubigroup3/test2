@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta  content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<meta  name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+   <title>主页</title>
+   <link rel="stylesheet" type="text/css" href="./css/home.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> 
+	 <link href="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet">
+	 
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+   <script src="js/bootstrap.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+   <script src="js/metisMenu.min.js"></script>
+<!-- DataTables JavaScript -->
+   <script src="js/dataTables.bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+   <script src="js/sb-admin-2.js"></script>
+   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./javascript/home.js"></script>
+
+<style>
+    @import url(./css/home.css);
+</style>
+
+</head>
+
+
+<body>
+
+
+	    <!--左侧菜单栏-->
+
+	<div id="menu" class="menu">
+		<div class="title">
+		  <div class="fontStyleforTitle"><font>债券销售管理系统</font></div>
+		</div>
+
+		<div id="homeMenu" class="menuInfo">
+			<ul>
+				<li><a href="#home" onclick="changediv1()">
+					<img  src="image/home.png" width="24">
+					主页</a>
+				</li>
+			</ul>
+		</div>
+
+		<div id="insert" class="menuInfo">
+			<ul>
+				<li><a href="#insertData" onclick="changediv2()">
+					<img src="image/insert.png" width="22">
+					销售录入</a>
+				</li>
+			</ul>
+		</div>
+
+        <div id="search" class="menuInfo">
+			<ul>
+				<li><a href="#SalesData" onclick="changediv3()">
+					<img src="image/table.png" width="23" height="21">
+				报表查询</a>
+			<li>
+		</ul>
+		</div>
+	</div>
+
+
+		 <!--用户名称栏 固定-->
+		<div class="usernameModule">
+            <span class="logout" th:text="${session.username.name}">
+
+        		  <a href="/logout.html">  <img  src="image/logout.png"  width="20" /> </a>
+			</span>
+	    </div>
+
+	<!--home主页-->
+	<div id="home" class="home" style="display:block;">
+		这里是主页
+	</div>
+ 
+   <!--录入数据模块 显示主要信息-->
+	<div id="insertData" class="home" style="display: none;">
+		<div class="homeTitle">
+			<span class="titlefontStyle1">
+				<p>系统/<b>销售录入</b></p>
+			</span>
+		</div>
+
+		<div class="belowBar">
+			<div class="homeTitle">
+				<span class="titlefontStyle2">
+					<b>录入记录</b>
+				</span>
+			</div>
+
+			<div class="insertTable">
+
+			 <span id="" class="tableTitle">
+		            <select  id="nameforDate" name="name" class="form-control selectModuleStyle">
+		            	<option value="default" selected="selected">销售姓名</option>
+			            <option value="lwj">刘文佳</option>
+			            <option value="cyx">曹彦心</option>
+			            <option value="yzr">颜泽荣</option>
+			            <option value="jqy">金秋怡</option>
+			            <option value="cl">陈乐</option>
+			            <option value="czb">陈子博</option>
+			            <option value="zyk">张应坤</option>
+			            <option value="hl">韩蕾</option>
+		            </select>
+			 </span>
+
+			  <span id="" class="tableTitle">
+		            <select  id="bondforData" name="bond" class="form-control selectModuleStyle">
+		            	<option value="default" selected="selected">债券类型</option>
+			            <option value="zfzq">政府债券</option>
+			            <option value="qyzq">企业债券</option>
+		            </select>
+			 </span>
+
+			<span id="" class="tableTitle">
+		           <input id="date" class="form-control selectModuleStyle" type="date" value="销售日期"/>
+			</span>
+
+			<span id="" class="tableTitle">
+		            <input id="money" class="form-control selectModuleStyle" type="text" value="金额"/>
+			</span>
+
+			<span id="" class="tableTitleforButton">
+				<button class="btn addButtonStyle"> 添加</button>
+			</span>
+
+			<span id="" class="tableTitleforButton">
+				<button class="btn importButtonStyle"> 导入</button>
+			</span>
+
+			<div class="tableBody">
+				<table class="table table-striped table-hover table-responsive" frame=void> 
+                      <thread>
+                        <tr>
+                          <th>ID</th>
+                          <th>姓名</th>
+                          <th>债券类型</th>
+                          <th>日期</th>
+                          <th>金额</th>
+                        </tr>
+                      </thread>
+                      <tbody> 
+                        <c:forEach items="${user_List}" var="user">
+                          <tr>
+                            <td>${demo_bonds_sales_record.id}</td>
+                            <td>${demo_bonds_sales_record.sales_name}</td>
+                            <td>${demo_bonds_sales_record.bonds_name}</td>
+                            <td>${demo_bonds_sales_record.created_at}</td>
+                            <td>${demo_bonds_sales_record.amount}</td>
+                          </tr>
+                        </c:forEach>
+                      </tbody>
+                    </table>
+			</div>
+		</div>
+	</div>
+ </div>
+    
+ 
+
+	<!--报表查询 -->
+    <div id="SalesData" class="home" style="display: none;">
+    	 
+    			<div class="homeTitle">
+			<span class="titlefontStyle1">
+				<p>系统/<b>报表查询</b></p>
+			</span>
+		</div>
+
+		<div class="belowBar">
+			<div class="homeTitle">
+				<span class="titlefontStyle2">
+					<b>查询结果</b>
+				</span>
+			</div>
+
+			<div class="insertTable">
+
+			 <span id="" class="tableTitle">
+		            <select  id="nameforBond" name="name" class="form-control selectModuleStyle">
+		            	<option value="default" selected="selected">销售姓名</option>
+			            <option value="lwj">刘文佳</option>
+			            <option value="cyx">曹彦心</option>
+			            <option value="yzr">颜泽荣</option>
+			            <option value="jqy">金秋怡</option>
+			            <option value="cl">陈乐</option>
+			            <option value="czb">陈子博</option>
+			            <option value="zyk">张应坤</option>
+			            <option value="hl">韩蕾</option>
+		            </select>
+			 </span>
+
+			  <span id="" class="tableTitle">
+		            <select  id="bondforBond" name="bond" class="form-control selectModuleStyle">
+		            	<option value="default" selected="selected">债券类型</option>
+			            <option value="zfzq">政府债券</option>
+			            <option value="qyzq">企业债券</option>
+		            </select>
+			 </span>
+
+			<span id="" class="tableTitle">
+		           <input id="startTime" class="form-control selectModuleStyle" type="date" value=""/>
+			</span>
+
+			<span id="" class="tableTitle">
+		            <input id="endTime" class="form-control selectModuleStyle" type="date" value=""/>
+			</span>
+
+			<span id="" class="tableTitleforButton">
+				<button class="btn addButtonStyle"> 查询</button>
+			</span>
+
+			<span id="" class="tableTitleforButton">
+				<button class="btn importButtonStyle"> 导出</button>
+			</span>
+
+			<div class="tableBody">
+				<table class="table table-striped table-hover table-responsive" frame=void> 
+                      <thread>
+                        <tr>
+                          <th>ID</th>
+                          <th>姓名</th>
+                          <th>债券类型</th>
+                          <th>日期</th>
+                          <th>金额</th>
+                        </tr>
+                      </thread>
+                      <tbody> 
+                        <c:forEach items="${user_List}" var="user">
+                          <tr>
+                            <td>${demo_bonds_sales_record.id}</td>
+                            <td>${demo_bonds_sales_record.sales_name}</td>
+                            <td>${demo_bonds_sales_record.bonds_name}</td>
+                            <td>${demo_bonds_sales_record.created_at}</td>
+                            <td>${demo_bonds_sales_record.amount}</td>
+                          </tr>
+                        </c:forEach>
+                      </tbody>
+                    </table>
+			</div>
+		</div>
+	</div>
+   </div>
+
+    		 <div class="copyright">
+          <b class="crFont"> copyright©NiubilityTeam3</b>
+          </div>
+      
+
+    
+</body>
+</html>
