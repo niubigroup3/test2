@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>登录</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="./javascript/login.js"></script>
+    <style>
+        @import url(./css/login.css);
+    </style>
+
+</head>
+
+
+<body>
+
+
+<form id="loginform" method="post" action="/login">
+    <div class="loginframe">
+        <div class="logintitle">
+            <br><br>
+            <h1>欢迎使用,</h1>
+            <p>债券销售管理系统</p>
+            <br>
+        </div>
+
+        <br><br><br>
+        <div class="loginframe2">
+            <br>
+            <b>账号：</b>
+            <input class="inputStyle" id="username" type="text" name="username" placeholder="请输入账号"><br>
+            <b>密码：</b>
+            <input class="inputStyle" id="password" type="password" name="password" placeholder="请输入密码">
+
+            <br><br>
+
+            <button id="button" class="btn btn-primary buttnstyle" onclick="login()">
+                立即登录
+            </button>
+        </div>
+    </div>
+    </div>
+</form>
+
+<!--底部版权栏 -->
+<div class="copyright">
+    <font class="cpfont"> copyright©NiubilityTeam3</font>
+</div>
+
+
+</body>
+
+</html>
