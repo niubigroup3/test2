@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.citi.dao.BondMapper">
+
+
+    <sql id="insertFields">
+            bonds_name, sales_name, amount, created_at, updated_at
+    </sql>
+
+    <sql id="selectFields">
+            id, bonds_name, sales_name, amount, created_at, updated_at
+    </sql>
+
+
+    <select id="selectBondByName" resultType="DemoBondsSalesRecord">
+        select <include refid="selectFields"></include>
+        from demo_bonds_sales_record
+        where sales_name = #{salesName} and bonds_name = #{bondsName}
+    </select>
+
+    <select id="selectBondById" resultType="DemoBondsSalesRecord">
+        select <include refid="selectFields"></include>
+        from demo_bonds_sales_record
+        where id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="DemoBondsSalesRecord">
+        select <include refid="selectFields"></include>
+        from demo_bonds_sales_record
+    </select>
+
+    <insert id="insertBond" parameterType="DemoBondsSalesRecord">
+        insert into demo_bonds_sales_record(<include refid="insertFields"></include>)
+        --         取值是取实体类的字段
+        values(#{bondsName},#{salesName},#{amount},#{createdAt},#{updatedAt})
+    </insert>
+
+    <update id="updateUserStatus">
+        update demo_user set status = #{status} where id = #{id}
+    </update>
+
+</mapper>
