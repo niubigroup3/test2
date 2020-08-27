@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.citi.dao.UserMapper">
+
+    <sql id="selectFields">
+-- 插入是插入数据库表的字段
+        id, name, pass, created_at, updated_at, status
+    </sql>
+
+    <sql id="insertFields">
+        name, pass, created_at, updated_at, status
+    </sql>
+
+
+    <select id="selectUserById" resultType="DemoUser">
+        select <include refid="selectFields"></include>
+        from demo_user
+        where id = #{id}
+    </select>
+
+    <select id="selectUserByName" resultType="DemoUser">
+        select <include refid="selectFields"></include>
+        from demo_user
+        where name = #{name}
+    </select>
+
+
+    <insert id="insertUser" parameterType="DemoUser">
+        insert into demo_user(<include refid="insertFields"></include>)
+--         取值是取实体类的字段
+        values(#{name},#{pass},#{createdAt},#{updatedAt},#{status})
+    </insert>
+
+    <update id="updateUserStatus">
+        update demo_user set status = #{status} where id = #{id}
+    </update>
+
+</mapper>

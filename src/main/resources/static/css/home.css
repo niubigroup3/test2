@@ -1,0 +1,358 @@
+
+html,body{
+ width: 100%; 
+height: 100%; 
+min-width:999px;
+font-family: 思源黑体;
+}
+
+ul{
+	list-style-type: none;
+	top:40%; 
+	position: relative;
+}
+
+a{
+	
+	font-size: 1vw;
+	color: black;
+	margin-left: 10%;
+	text-decoration: none!important;
+}
+
+img{
+	margin-right:5%;
+}
+
+table{
+	width: 100%;
+	table-layout:fixed;
+}
+
+table th, table td {
+text-align: center;
+vertical-align: middle!important;
+}
+
+.aclass{
+
+	font-size: 1vw;
+	color: blue;
+	margin-left: 10%;
+	text-decoration: none!important;
+}
+
+.fontStyleforTitle{
+	top:25%;
+	position: relative;
+}
+
+.fontTable{
+	top: 70px;
+	left: 20px;
+	font-size: 25px;
+	color: #010502;
+	font-weight: 700;
+	position: relative;
+}
+
+.fontSale{
+	top: 40px;
+	left: 550px;
+	font-size: 25px;
+	color: #010502;
+	font-weight: 700;
+	position: relative;
+}
+
+
+.fontNum{
+	top: 25px;
+	left: 420px;
+	font-size: 55px;
+	color: #f20424;
+	font-weight: 300;
+	position: relative;
+}
+
+.fontTime{
+	top: 30px;
+	left: 22px;
+	font-size: 15px;
+	color: rgba(102, 102, 102, 0.29);
+	font-weight: 300;
+	position: relative;
+}
+
+.menu{	
+        width: 14%;
+        height: 100%;
+        background-color: white;
+        float: left;
+        position: relative;
+        bottom: 0%;
+        border-right: solid 1px #E9E9E9;
+}
+
+.title{
+	text-align: center;
+	background-color: rgba(55,88,255,0.6);
+	width: 100%;
+	height: 8%;
+	font-size: 1.6vw;
+	color: white;
+	position: relative;
+
+}
+
+
+.menuInfo{
+	height:8%;
+	width: 100%;
+    position: relative;
+    background-color:#FFFFFF;
+    border-left: solid 5px #FFFFFF;
+}
+
+.newhomeMenu{
+	height:8%;
+	width: 100%;
+    position: relative;
+    background-color:#FFFFFF;
+    border-left: solid 5px #3758FF;
+}
+
+.home{
+	width:86%;
+	height: 90%;
+	background-color: white;
+	float: left;
+	position: relative;
+}
+
+.usernameModule{
+	background-color: #FFFFFF;
+	width: 86%;
+	height: 8%;
+	font-size: 1vw;
+	color: black;
+	overflow: hidden;
+	position: relative;
+	border-bottom:solid 1px #E9E9E9;
+}
+
+.homeTitle{
+	height: 8%;
+	width: 100%;
+}
+
+.titlefontStyle1{
+	width: 15%;
+	height:50%;
+	text-align:center;
+	top: 25%;
+	font-size:1.2vw;
+	position: relative;
+	float: left;
+}
+
+.titlefontStyle2{
+	width: 15%;
+	height:50%;
+	text-align:center;
+	top: 25%;
+	font-size:1.1vw;
+	position: relative;
+	float: left;
+}
+.belowBar{
+	height: 90%;
+	width: 100%;
+	background-color:rgba(210,219,229,0.1);
+	border-top:solid 1px #E9E9E9;
+}
+
+.infoStyle{
+ width: 80%;
+ height: 10%;
+ position: relative;
+ text-align:center;
+ font-size: 1vw;
+}
+
+.insertTable{
+	 width: 95%;
+	 height:90%;
+	 left:2.5%;
+	 position: relative;
+	 border-style:solid;
+	 border-color:#E9E9E9;
+	 border-width: 1px;
+	 background-color:white;
+	 border-radius:5px;
+ }
+
+.leftTable{
+	width: 40%;
+	height:40%;
+	top: 2%;
+	left:7.5%;
+	position: relative;
+	border-style:solid;
+	border-color:#E9E9E9;
+	border-width: 1px;
+	background-color:white;
+	border-radius:5px;
+}
+
+
+.rightTable{
+	width: 40%;
+	height:40%;
+	top: 2%;
+	left:12.5%;
+	position: relative;
+	border-style:solid;
+	border-color:#E9E9E9;
+	border-width: 1px;
+	background-color:white;
+	border-radius:5px;
+}
+
+
+.belowTable{
+	width: 85%;
+	height:50%;
+	top: 6%;
+	left:7.5%;
+	position: relative;
+	border-style:solid;
+	border-color:#E9E9E9;
+	border-width: 1px;
+	background-color:white;
+	border-radius:5px;
+}
+
+.charts{
+	width:1050px;
+	height:300px;
+	top: 8%;
+	left:28.5%;
+}
+
+.salesDataStyle{
+	width: 60%;
+	position: left;
+	height: 20%;
+	margin-left:10%;
+	border-radius: 15px;
+	border-style: solid;
+	border-color: #E9E9E9;
+	text-align: center;
+}
+
+.salesTableStyle{
+	width: 60%;
+	position: left;
+	height: 60%;
+	margin-top: 3%;
+	margin-left:10%;
+	border-style: solid;
+	border-color: #E9E9E9;
+}
+
+
+.logout{
+	 height:70%; 
+	 top:30%; 
+	 width:13%; 
+	 left:87%; 
+	 float:left; 
+	 position: absolute;
+}
+
+
+.fontModuleStyle1{
+	position: relative;float: left;left:20%;
+}
+
+.tableTitle{
+	width: 18%;
+	height: 10%;
+	position: relative;
+	float: left;
+}
+
+.selectModuleStyle{
+	width: 85%;
+	left:12.5%;
+	top:25%;
+	height:65%;
+	position: relative;
+}
+
+.tableTitleforButton{
+	width: 10%;
+	height: 10%;
+	position: relative;
+	float: left;
+}
+
+.addButtonStyle{
+	width: 70%;
+	left:50%;
+	top:25%;
+	height:65%;
+	position: relative;
+	float:left;
+	border-radius:100px;
+	border-color:#3758FF;
+	background-color:#FFFFFF;
+	color:#3758FF;
+}
+
+.importButtonStyle{
+	width:70%;
+	left:60%;
+	top:25%;
+	height:65%;
+	float: left;
+	position: relative;
+	border-radius:100px;
+	background-color:#3758FF;
+	color:#FFFFFF;
+}
+
+.tableBody{
+	width: 98%;
+	left: 1%;
+	top:5%;
+	height: 80%;
+	position: relative;
+	float: left;
+	border:solid 1px #E9E9E9;
+	border-radius:5px;
+
+}
+
+.copyright{
+    position: absolute; 
+    bottom: 0;
+    left: 40%; 
+     width: 20%;
+    text-align: center;
+
+}
+
+.fontModuleStyle2{
+	width: 50%;float: left;height: 40%;
+}
+
+.fontTitleStyle{
+margin-left: 2%;
+}
+
+.crFont{
+    color:rgba(0,0,0,0.45);
+    font-size:0.9vw;
+}
